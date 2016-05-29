@@ -1,0 +1,38 @@
+.table{
+	padding:20px;
+	padding-top:10px;
+	font-family: Verdana;
+}
+
+
+.table1{
+	font-family: Verdana;
+}
+
+.v {
+
+border:1px solid #004080;
+border-radius: 9px;
+padding: 10px;
+margin: 10px;
+margin-left: 20px;
+width: 520px;
+}
+
+.di {
+
+  width: 1345px;
+  height: 850px;
+  margin: 5px 0;
+  padding: 16px
+  
+}
+
+.f1 {
+height: 100px;
+}
+
+.f {
+position: absolute;
+top: 60px;
+}

@@ -1,0 +1,56 @@
+.wrepper {
+	text-align:center;
+	outline: 0px solid #FF00AE;
+	padding-bottom: 20px;
+	font-family: Impact;
+	
+	
+}
+body {
+	font-family: Tahoma;
+}
+
+
+.about{
+	margin-right:350px;
+	margin-bottom:350px;
+
+}
+
+.di {
+   width: 1345px;
+  height: 850px;
+  margin: 5px;
+  padding-left:135px;
+  
+}
+.v {
+margin: 10px;
+}
+.f1 {
+height: 100px;
+}
+.f {
+position: absolute;
+
+top: 60px;
+}
+
+.poshuk {
+	margin-left:694px;
+}
+.reg{
+	width:150px;
+	height:30px;
+	font-family: Verdana;
+	margin-left:1130px;
+}
+.a{
+	text-decoration:none;
+}
+.form {
+	width:400px;
+}
+
+
+	
