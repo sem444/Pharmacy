@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
+
+<script> 
+$(document).ready(function(){ 
+
+var flip = 0; 
+$("button").click(function () { 
+$("h2").toggle(true); 
+}); 
+
+}); 
+</script> 
+
+<script type="text/javascript"> 
+var lastResFind=""; 
+var copy_page=""; 
+function TrimStr(s) { 
+s = s.replace( /^\s+/g, ''); 
+return s.replace( /\s+$/g, ''); 
+} 
+function FindOnPage(inputId) { 
+var obj = window.document.getElementById(inputId); 
+var textToFind; 
+
+if (obj) { 
+textToFind = TrimStr(obj.value); 
+} else { 
+alert("Введенна фраза не знайдена"); 
+return; 
+} 
+if (textToFind == "") { 
+alert("Ви нічого не ввели"); 
+return; 
+} 
+
+
+if(copy_page.length>0) 
+document.body.innerHTML=copy_page; 
+else copy_page=document.body.innerHTML; 
+
+
+document.body.innerHTML = document.body.innerHTML.replace(eval("/name="+lastResFind+"/gi")," "); 
+document.body.innerHTML = document.body.innerHTML.replace(eval("/"+textToFind+"/gi"),"<a name="+textToFind+" style='background:blue'>"+textToFind+"</a>"); 
+lastResFind=textToFind; 
+window.location = '#'+textToFind; 
+} 
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/ds_style.css">
+<link rel="stylesheet" href="css/sma_style.css">
+<title>Аптеки "Сімейна Аптека"</title>
+
+</head>
+<body>
+<header class="w3-container w3-teal f1">
+  <h1 class="wrepper">Мережа аптек<img src="image/gaba.png" width="50px" height="50px" alt="logo"></h1>
+  
+  <div class="w3-topnav f">
+  <a href="index.html">Головна</a>
+   <div class="w3-dropdown-hover">
+<a href="#">Аптеки</a>
+<div class="w3-dropdown-content">
+    <a href="ds.html">D.S.</a>
+    <a href="edel.html">Едельвейс</a>
+    <a href="biomed.html">Biomed</a>
+	<a href="sm.html">Сімейна Аптека</a>
+    <a href="salve.html">Сальве</a>
+	<a href="pd.html">Подорожник</a>
+  </div>
+</div>
+  <a href="about.html">Про нас</a>
+  <input type="text" id="text-to-find" value="" class="poshuk"> 
+<input type="button" onclick="javascript: FindOnPage('text-to-find'); return false;" value="Пошук"/>
+ </div>
+ 
+</header>
+	<div class="w3-card-2 di sma">
+<table>
+<tr>
+<td>
+<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d82349.11935533372!2d23.96649155251332!3d49.83475367723039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0YHRltC80LXQudC90LAg0LDQv9GC0LXQutC4INC70YzQstGW0LI!5e0!3m2!1suk!2sua!4v1463311667490" width="600" height="450" frameborder="10" style="border:1" allowfullscreen></iframe>
+</td>
+<td class="table">
+<p align="center" class="table1"><strong>Аптеки "Сімейна Аптека" м.Львова:</strong></p>
+<p class="table1">
+1. Сімейна аптека Аронія,
+вулиця Федьковича, 11,
+тел.0322 373 724.</p>
+<p>
+2. Сімейна аптека Аронія,
+проспект В'ячеслава Чорновола, 43А,
+тел.0322 971 599
+Відкрито до 20:00.</p>
+<p>3.Сімейна аптека Аронія,
+вулиця Володимира Великого, 67А,
+тел.0322 648 860.</p>
+<p>4. "Сімейна Аптека",
+вулиця Симона Петлюри, 36,
+Відкрито до 20:00.</p>
+<p>5. Сімейна Аптека,
+вулиця Шевченка, 358,
+тел.0322 911 578.</p>
+<p>6. Сімейна Аптека,
+вулиця Любінська, 96,
+тел.0322 622 037,
+Відкрито до 20:00.</p>
+<p>7. Сімейна аптека Аронія,
+ул. Симона Петлюры, 17,
+тел.0322 922 305.</p>
+<p>8. ПП Аптека №17 Сімейна аптека Аронія,
+вулиця Івана Кавалерідзе, 2,
+тел.03222 11987.</p>
+<p>9. ПП Аптека №3 Сімейна аптека Аронія,
+вулиця Замарстинівська, 11,
+тел.0322 528 070.</p>
+<p>10. ПП Аптечний кіоск №1 Сімейна аптека Аронія,
+вулиця Личаківська, 67,
+тел.0322 757 020.
+</p>
+<p>11.ПП Аптека №16 Сімейна аптека Аронія,
+вулиця Княгині Ольги, 65,
+тел.0322 471 521.</p>
+
+
+<p></p>
+</td>
+</tr>
+</table>
+	</div>
+
+<footer class="w3-container w3-teal">
+  <h5></h5>
+  <p align="center">Copyright © 2016 by Sem</p>
+</footer> 
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+input {
+	margin-bottom:5px;
+	background-color:#E7F0FF;
+	
+	
+}
+
+.question {
+	font-weight:bold;
+}
+
+fieldset {
+	padding:0 20px;
+	border: 1px solid #cccccc;
+	width:500px;
+	background-color:#F6F6F6;
+	
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
+
+<script> 
+$(document).ready(function(){ 
+
+var flip = 0; 
+$("button").click(function () { 
+$("h2").toggle(true); 
+}); 
+
+}); 
+</script> 
+
+<script type="text/javascript"> 
+var lastResFind=""; 
+var copy_page=""; 
+function TrimStr(s) { 
+s = s.replace( /^\s+/g, ''); 
+return s.replace( /\s+$/g, ''); 
+} 
+function FindOnPage(inputId) { 
+var obj = window.document.getElementById(inputId); 
+var textToFind; 
+
+if (obj) { 
+textToFind = TrimStr(obj.value); 
+} else { 
+alert("Введенна фраза не знайдена"); 
+return; 
+} 
+if (textToFind == "") { 
+alert("Ви нічого не ввели"); 
+return; 
+} 
+
+
+if(copy_page.length>0) 
+document.body.innerHTML=copy_page; 
+else copy_page=document.body.innerHTML; 
+
+
+document.body.innerHTML = document.body.innerHTML.replace(eval("/name="+lastResFind+"/gi")," "); 
+document.body.innerHTML = document.body.innerHTML.replace(eval("/"+textToFind+"/gi"),"<a name="+textToFind+" style='background:blue'>"+textToFind+"</a>"); 
+lastResFind=textToFind; 
+window.location = '#'+textToFind; 
+} 
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/ds_style.css">
+<title>Аптеки "D.S."</title>
+
+</head>
+<body>
+<header class="w3-container w3-teal f1">
+  <h1 class="wrepper">Мережа аптек<img src="image/gaba.png" width="50px" height="50px" alt="logo">
+  </h1>
+  
+<div class="w3-topnav f">
+  <a href="index.html">Головна</a>
+  <div class="w3-dropdown-hover">
+<a href="#">Аптеки</a>
+<div class="w3-dropdown-content">
+    <a href="ds.html">D.S.</a>
+    <a href="edel.html">Едельвейс</a>
+    <a href="biomed.html">Biomed</a>
+	<a href="sm.html">Сімейна Аптека</a>
+    <a href="salve.html">Сальве</a>
+	<a href="pd.html">Подорожник</a>
+  </div>
+</div>
+  <a href="about.html">Про нас</a>
+  <input type="text" id="text-to-find" value="" class="poshuk"> 
+<input type="button" onclick="javascript: FindOnPage('text-to-find'); return false;" value="Пошук"/>
+ </div>
+ 
+</header>
+	<div class="w3-card-2 di">
+<table>
+<tr>
+<td>
+<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d41173.13099684774!2d23.99644704714082!3d49.83643162911457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0LDQv9GC0LXQutCwINC00YEg0LvRjNCy0L7Qsg!5e0!3m2!1sru!2sua!4v1463310344786" width="600" height="450" frameborder="1f0" style="border:1" allowfullscreen></iframe>
+</td>
+<td class="table">
+<p align="center" class="table1"><strong>Аптеки "D.S." м.Львова:</strong></p>
+<p class="table1">
+1. Аптека D.S.
+вул. Пекарська, 33,
+тел.0322 761 905,
+Відкрито до 21:00.</p>
+<p>
+2. Аптека D.S. №2 ТОВ "Маркет Універсал ЛТД",
+проспект Шевченка, 22,
+тел.0322 612 038,
+Відкрито до 21:30.</p>
+<p>3. Аптека D.S.
+вул. Городоцька, 177,
+тел.0322 375 915,
+Відкрито до 21:00.</p>
+<p>4. Аптека D.S.
+вулиця Федьковича, 26,
+тел.0322 372 879,
+Відкрито до 20:00.</p>
+<p>5. Аптека "D.S."
+вулиця Симона Петлюри, 2,
+тел.0322 928 208,
+Відкрито до 21:00.</p>
+<p>6. Аптека D.S.
+вулиця Словацького, 2,
+тел.03222 56949,
+Відкрито до 21:30.</p>
+<p>7. Аптека D.S.
+проспект Свободи, 33,
+тел.0322 554 215,
+Відкрито до 22:00.</p>
+
+</td>
+</tr>
+</table>
+	</div>
+
+<footer class="w3-container w3-teal">
+  <h5></h5>
+  <p align="center">Copyright © 2016 by Sem</p>
+</footer> 
+
+</body>
+</html>

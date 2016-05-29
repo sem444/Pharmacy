@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
+
+<script> 
+$(document).ready(function(){ 
+
+var flip = 0; 
+$("button").click(function () { 
+$("h2").toggle(true); 
+}); 
+
+}); 
+</script> 
+
+<script type="text/javascript"> 
+var lastResFind=""; 
+var copy_page=""; 
+function TrimStr(s) { 
+s = s.replace( /^\s+/g, ''); 
+return s.replace( /\s+$/g, ''); 
+} 
+function FindOnPage(inputId) { 
+var obj = window.document.getElementById(inputId); 
+var textToFind; 
+
+if (obj) { 
+textToFind = TrimStr(obj.value); 
+} else { 
+alert("Введенна фраза не знайдена"); 
+return; 
+} 
+if (textToFind == "") { 
+alert("Ви нічого не ввели"); 
+return; 
+} 
+
+
+if(copy_page.length>0) 
+document.body.innerHTML=copy_page; 
+else copy_page=document.body.innerHTML; 
+
+
+document.body.innerHTML = document.body.innerHTML.replace(eval("/name="+lastResFind+"/gi")," "); 
+document.body.innerHTML = document.body.innerHTML.replace(eval("/"+textToFind+"/gi"),"<a name="+textToFind+" style='background:blue'>"+textToFind+"</a>"); 
+lastResFind=textToFind; 
+window.location = '#'+textToFind; 
+} 
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="registr.php">
+<title>Мережа аптек</title>
+</head>
+<body>
+
+<header class="w3-container w3-teal f1">
+
+<a href="registr.php" class="a"><input type="button" class="reg" value="реєстрація"/></a>
+ <h1 class="wrepper">
+  Мережа аптек
+  <img src="image/gaba.png" width="50px" height="50px" alt="logo">
+  </h1>
+  
+  
+  <div class="w3-topnav f">
+  <a href="index.html">Головна</a>
+  <div class="w3-dropdown-hover">
+<a href="#">Аптеки</a>
+<div class="w3-dropdown-content">
+    <a href="ds.html">D.S.</a>
+    <a href="edel.html">Едельвейс</a>
+    <a href="biomed.html">Biomed</a>
+	<a href="sm.html">Сімейна Аптека</a>
+    <a href="salve.html">Сальве</a>
+	<a href="pd.html">Подорожник</a>
+  </div>
+  
+</div>
+  <a href="about.html">Про нас</a>
+  <a href="magaz.html">Купити ліки</a>
+  
+  <input type="text" id="text-to-find" value="" class="poshuk"> 
+<input type="button" onclick="javascript: FindOnPage('text-to-find'); return false;" value="Пошук" />
+  </div>
+</header>
+<div class="poker">
+<div class="w3-card-2 di">
+<table>
+<tr>
+<td>
+<div class="w3-card-12 v" style="width:250px">
+  <a href="ds.html"><img src="image/DS.png" alt="Norway" style="width:100%"></a>
+  <div class="w3-container w3-center">
+    <a href="ds.html" target="_blank" title="Мережа аптек "D.S.""><p>Мережа аптек "D.S."</p></a>
+  </div>
+  </td>
+  <td>
+  <div class="w3-card-12 v" style="width:250px">
+  <a href="edel.html"><img src="image/edel.png" alt="Norway" style="width:100%">
+  <div class="w3-container w3-center">
+    <p>Мережа аптек "Едельвейс"</p></a>
+  </div>
+  </td>
+  <td>
+  <div class="w3-card-12 v" style="width:250px">
+  <a href="biomed.html"><img src="image/biomed.png" alt="Norway" style="width:100%">
+  <div class="w3-container w3-center">
+    <p>Мережа аптек "Biomed"</p></a>
+  </div>
+  </td>
+  </tr>
+  <tr>
+  <td>
+<div class="w3-card-12 v" style="width:250px">
+  <a href="sm.html"><img src="image/simey.png" alt="Norway" style="width:100%">
+  <div class="w3-container w3-center">
+    <p>Мережа аптек "Сімейна апетка"</p></a>
+  </div>
+  </td>
+  <td>
+  <div class="w3-card-12 v" style="width:250px">
+  <a href="salve.html"><img src="image/salve.png" alt="Norway" style="width:100%">
+  <div class="w3-container w3-center">
+    <p>Мережа аптек "Сальве", "Salve"</p></a>
+  </div>
+  </td>
+    <td>
+  <div class="w3-card-12 v" style="width:250px">
+  <a href="pd.html"><img src="image/pd.png" alt="Norway" style="width:100%">
+  <div class="w3-container w3-center">
+    <p>Мережа аптек "Подорожник"</p></a>
+  </div>
+  </td>
+  </tr>
+  </table>
+</div>
+</div>
+</div>
+ <footer class="w3-container w3-teal">
+  <h5><form enctype="multipart/form-data" method="post">
+   <p>Завантажте ваші фото на сервер</p>
+   <p><input type="file" name="photo" multiple accept="image/*,image/jpeg">
+   <input type="submit" value="Відправити"></p></h5>
+  <p align="center">Copyright © 2016 Sem</p>
+</footer> 
+
+
+
+</body>
+</html>
